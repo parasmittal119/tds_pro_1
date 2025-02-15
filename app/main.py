@@ -90,6 +90,8 @@ class TaskHandler:
             else:
                 # Handle custom business tasks (B3-B10)
                 return await self.handle_custom_task(task_description)
+        except Exception as err:
+            print(err)
 
     async def handle_datagen(self, task: str) -> Dict[str, Any]:
         """Handle A1: Install and run datagen.py"""
